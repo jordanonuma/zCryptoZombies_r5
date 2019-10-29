@@ -1,5 +1,5 @@
 pragma solidity ^0.4.25;
 
-Contract ZombieFactory {
+contract ZombieFactory {
 
 } //end Contract ZombieFactory {}
