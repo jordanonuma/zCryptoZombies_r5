@@ -10,4 +10,8 @@ contract ZombieFactory {
     } // end struct Zombie {}
 
     Zombie[] public zombies; //This is the array 'zombies' made of the Zombie[] struct above
+
+    function createZombie(string _name, uint _dna) {
+        
+    } //end function createZombie()
 } //end contract ZombieFactory {}
