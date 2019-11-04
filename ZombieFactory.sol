@@ -12,6 +12,6 @@ contract ZombieFactory {
     Zombie[] public zombies; //This is the array 'zombies' made of the Zombie[] struct above
 
     function createZombie(string _name, uint _dna) {
-        
+        zombies.push(Zombie(_name, _dna));
     } //end function createZombie()
 } //end contract ZombieFactory {}
