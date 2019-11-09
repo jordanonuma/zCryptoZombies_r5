@@ -1,6 +1,8 @@
 pragma solidity ^0.4.25;
 
 contract ZombieFactory {
+    event NewZombie(uint zombieId, string name, uint dna); //tels front end when a new zombie has been created
+
     uint dnaDigits = 16;
     uint dnaModulus = 10 ** dnaDigits;
 
