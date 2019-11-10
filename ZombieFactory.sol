@@ -12,6 +12,7 @@ contract ZombieFactory {
     } // end struct Zombie {}
 
     Zombie[] public zombies; //This is the array 'zombies' made of the Zombie[] struct above
+    mapping (uint => address) public zombieToOwner;
 
     function _createZombie(string _name, uint _dna) private {
         zombies.push(Zombie(_name, _dna));
