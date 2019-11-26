@@ -6,12 +6,14 @@ contract ZombieFactory is Ownable {
 
     uint dnaDigits = 16;
     uint dnaModulus = 10 ** dnaDigits;
+    uint cooldownTime = 1 days;
 
     struct Zombie {
         string name;
         uint dna;
         uint32 level;
         uint32 readyTime;
+        
     } // end struct Zombie {}
 
     Zombie[] public zombies; //This is the array 'zombies' made of the Zombie[] struct above
