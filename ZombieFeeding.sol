@@ -23,7 +23,7 @@ contract ZombieFeeding is ZombieFactory {
     kittyContract = KittyInterface(_address);
   } //end function setKittyContractAddress()
 
-  function _triggerCooldown(Zombe storage _zombie) internal {
+  function _triggerCooldown(Zombie storage _zombie) internal {
     _zombie.readyTime = uint32(now + cooldownTime);
   } //end function _triggerCooldown()
 
