@@ -35,6 +35,7 @@ contract ZombieFeeding is ZombieFactory {
     require(msg.sender == zombieToOwner[_zombieId]);
     Zombie storage myZombie = zombies[_zombieId];
     _targetDna = _targetDna % dnaModulus;
+    require(_isReady(myZombie)); //checks if user's zombie has passed the cooldown time
     uint newDna = (myZombie.dna + _targetDna)/2;
     if (keccak256(abi.encodePacked(_species)) = keccak256(abi.encodePacked("kitty"))) {
       newDna = newDna - newDna % 100 + 99;
