@@ -36,8 +36,7 @@ contract ZombieFeeding is ZombieFactory {
     return (_zombie.readyTime <= now);
   } //end function _isReady()
 
-  function feedAndMultiply(uint _zombieId, uint _targetDna, string _species) internal {
-    require(msg.sender == zombieToOwner[_zombieId]);
+  function feedAndMultiply(uint _zombieId, uint _targetDna, string _species) internal ownerOf[_zombieId] {
     Zombie storage myZombie = zombies[_zombieId];
     _targetDna = _targetDna % dnaModulus;
     require(_isReady(myZombie)); //checks if user's zombie has passed the cooldown time
