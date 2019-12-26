@@ -5,8 +5,8 @@ import "./SafeMath.sol";
 contract ZombieFactory is Ownable {
     event NewZombie(uint zombieId, string name, uint dna); //tels front end when a new zombie has been created
     using SafeMath for uint256;
-    using SafeMath for uint32;
-    using SafeMath for uint16;
+    using SafeMath32 for uint32;
+    using SafeMath16 for uint16;
 
     uint dnaDigits = 16;
     uint dnaModulus = 10 ** dnaDigits;
