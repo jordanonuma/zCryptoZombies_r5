@@ -3,6 +3,10 @@ import "./zombieattack.sol";
 import "./ERC721.sol";
 import "./SafeMath.sol";
 
+/// @title Contract that manages transfering zombie token ownership
+/// @author (>^_^)>
+/// @dev Compliant with OpenZeppelin's implementation of the ERC72 spec draft
+
 contract ZombieOwnership is ZombieAttack, ERC721 {
   mapping (uint => address) zombieApprovals;
 
