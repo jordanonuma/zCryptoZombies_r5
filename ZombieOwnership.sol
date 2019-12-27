@@ -1,6 +1,7 @@
 pragma solidity ^0.4.25;
 import "./zombieattack.sol";
 import "./ERC721.sol";
+import "./SafeMath.sol";
 
 contract ZombieOwnership is ZombieAttack, ERC721 {
   mapping (uint => address) zombieApprovals;
