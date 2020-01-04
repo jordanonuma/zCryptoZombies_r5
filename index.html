@@ -93,7 +93,7 @@
             return cryptoZombies.methods.feedOnKitty(zombieId, kittyId)
             .send({ from: userAccount })
             .on("receipt", function(receipt) {
-                $("#txStatus").text("Ate a kitty and spawned a new Zombie!");
+                $("#txStatus").text("Power overwhelming! Zombie successfully leveled up");
                 getZombiesByOwner(userAccount).then(displayZombies);
             })
             .on("error", function(error) {
