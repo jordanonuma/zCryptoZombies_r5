@@ -31,8 +31,7 @@
             .on("data", function(event) {
             let data = event.returnValues;
             // The current user just received a zombie!
-            // This will update the UI to show it.
-
+            getZombiesByOwner(userAccount).then(displayZombies); // This will update the UI to show it.
             }).on("error", console.error);
         } //end function startApp()
 
