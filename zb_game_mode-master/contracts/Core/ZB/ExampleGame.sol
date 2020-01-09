@@ -18,8 +18,8 @@ contract ExampleGame is ZBGameMode  {
         changes.changePlayerCurrentGoo(Player.Player1, 3);
         changes.changePlayerCurrentGoo(Player.Player2, 3);
 
-        changes.changePlayerCurretGooVials(Player.Player1, 3);
-        changes.changePlayerCurretGooVials(Player.Player2, 3);
+        changes.changePlayerCurrentGooVials(Player.Player1, 3);
+        changes.changePlayerCurrentGooVials(Player.Player2, 3);
 
         changes.changePlayerMaxGooVials(Player.Player1, 8);
         changes.changePlayerMaxGooVials(Player.Player2, 8);
