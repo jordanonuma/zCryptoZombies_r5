@@ -15,6 +15,8 @@ contract ExampleGame is ZBGameMode  {
         changes.changePlayerDefense(Player.Player2, 15);
         changes.changePlayerCurretGooVials(Player.Player1, 3);
         changes.changePlayerCurretGooVials(Player.Player2, 3);
+        changes.changePlayerMaxGooVials(Player.Player1, 8);
+        changes.changePlayerMaxGooVials(Player.Player2, 8);
     } //end function beforeMatchStart()
 
 } //end contract ExampleGame {}
