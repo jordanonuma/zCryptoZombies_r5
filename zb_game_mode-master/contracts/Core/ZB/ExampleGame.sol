@@ -3,7 +3,7 @@ pragma solidity 0.4.25;
 import "./ZB/ZBGameMode.sol";
 
 contract ExampleGame is ZBGameMode  {
-    mapping (string => bool) internal bannedCards;
+    mapping (string => bool) internal bannedCards; //will map "True" or "False" wrt card is banned or not
 
     constructor() public {
         bannedCards["Leash"] = true;
