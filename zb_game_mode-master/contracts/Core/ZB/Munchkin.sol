@@ -2,7 +2,9 @@ pragma solidity 0.4.25;
 
 import "./ZB/ZBGameMode.sol";
 
-contract ExampleGame is ZBGameMode  {
+//Munchkin will only allow players' cards that cost 2 goo or less.
+
+contract Munchkin is ZBGameMode  {
     mapping (string => bool) internal bannedCards; //will map "True" or "False" wrt card is banned or not
 
     constructor() public {
@@ -70,4 +72,4 @@ contract ExampleGame is ZBGameMode  {
     function isLegalCard(CardInstance card) internal view returns(bool) {
         return (!bannedCards[card.mouldName]);
     } //end function isLegalCard()
-} //end contract ExampleGame {}
+} //end contract Munchkin {}
