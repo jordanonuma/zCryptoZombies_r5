@@ -57,6 +57,6 @@ contract Munchkin is ZBGameMode  {
     changes.emit();
 
     function isLegalCard(CardInstance card) internal view returns(bool) {
-        return (!bannedCards[card.mouldName]);
+        
     } //end function isLegalCard()
 } //end contract Munchkin {}
