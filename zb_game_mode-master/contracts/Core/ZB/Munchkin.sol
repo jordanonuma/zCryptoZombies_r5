@@ -40,19 +40,6 @@ contract Munchkin is ZBGameMode  {
         ZBSerializer.SerializedGameStateChanges memory changes;
         changes.init();
 
-        //Sets pre-match game states of players
-        changes.changePlayerDefense(Player.Player1, 15);
-        changes.changePlayerDefense(Player.Player2, 15);
-
-        changes.changePlayerCurrentGoo(Player.Player1, 3);
-        changes.changePlayerCurrentGoo(Player.Player2, 3);
-
-        changes.changePlayerCurrentGooVials(Player.Player1, 3);
-        changes.changePlayerCurrentGooVials(Player.Player2, 3);
-
-        changes.changePlayerMaxGooVials(Player.Player1, 8);
-        changes.changePlayerMaxGooVials(Player.Player2, 8);
-
         for (uint i=0; i < gameState.playerStates.length; i++) {
             CardInstance[] memory newCards = new CardInstance[](gameState.playerStates[i].cardsInDeck.length);
             uint cardCount = 0;
