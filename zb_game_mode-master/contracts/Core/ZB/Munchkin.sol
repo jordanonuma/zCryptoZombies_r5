@@ -57,6 +57,6 @@ contract Munchkin is ZBGameMode  {
     changes.emit();
 
     function isLegalCard(CardInstance card) internal view returns(bool) {
-        
+        return(card.gooCost <=2);
     } //end function isLegalCard()
 } //end contract Munchkin {}
