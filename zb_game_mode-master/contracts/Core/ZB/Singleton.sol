@@ -2,9 +2,9 @@ pragma solidity 0.4.25;
 
 import "./ZB/ZBGameMode.sol";
 
-//Munchkin will only allow players' cards that cost 2 goo or less.
+//Singleton will only allow unique cards per player's deck (i.e. no duplicates).
 
-contract Munchkin is ZBGameMode  {
+contract Singleton is ZBGameMode  {
     mapping (string => bool) internal bannedCards; //will map "True" or "False" wrt card is banned or not
 
     constructor() public {
