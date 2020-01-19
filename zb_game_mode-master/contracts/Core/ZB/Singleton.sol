@@ -1,0 +1,62 @@
+pragma solidity 0.4.25;
+
+import "./ZB/ZBGameMode.sol";
+
+//Munchkin will only allow players' cards that cost 2 goo or less.
+
+contract Munchkin is ZBGameMode  {
+    mapping (string => bool) internal bannedCards; //will map "True" or "False" wrt card is banned or not
+
+    constructor() public {
+        bannedCards["Leash"] = true;
+        bannedCards["Bulldozer"] = true;
+        bannedCards["Lawnmower"] = true;
+        bannedCards["Shopping Cart"] = true;
+        bannedCards["Stapler"] = true;
+        bannedCards["Nail Bomb"] = true;
+        bannedCards["Goo Bottles"] = true;
+        bannedCards["Molotov"] = true;
+        bannedCards["Super Goo Serum"] = true;
+        bannedCards["Junk Spear"] = true;
+        bannedCards["Fire Extinguisher"] = true;
+        bannedCards["Fresh Meat"] = true;
+        bannedCards["Chainsaw"] = true;
+        bannedCards["Bat"] = true;
+        bannedCards["Whistle"] = true;
+        bannedCards["Supply Drop"] = true;
+        bannedCards["Goo Beaker"] = true;
+        bannedCards["Zed Kit"] = true;
+        bannedCards["Torch"] = true;
+        bannedCards["Shovel"] = true;
+        bannedCards["Boomstick"] = true;
+        bannedCards["Tainted Goo"] = true;
+        bannedCards["Corrupted Goo"] = true;
+    } //end constructor()
+
+    function beforeMatchStart(bytes serializedGameState) external {
+        GameState memory gameState;
+        gameState.init(serializedGameState);
+
+        ZBSerializer.SerializedGameStateChanges memory changes;
+        changes.init();
+
+        for (uint i=0; i < gameState.playerStates.length; i++) {
+            CardInstance[] memory newCards = new CardInstance[](gameState.playerStates[i].cardsInDeck.length);
+            uint cardCount = 0;
+            
+            for (uint j = 0; j < gameState.playerStates[i].cardsInDeck.length; j++) {
+                if (isLegalCard(gameState.playerStates[i].cardsInDeck[j])) {
+                    newCards[cardCount] = gameState.playerStates[i].cardsInDeck[j];
+                    cardCount++;
+                } //end if()
+            } //end for (uint j)
+            changes.changePlayerCardsInDeck(Player(i), newCards, cardCount);
+        } //end for (uint i)
+    } //end function beforeMatchStart()
+
+    changes.emit();
+
+    function isLegalCard(CardInstance card) internal view returns(bool) {
+        return(card.gooCost <=2);
+    } //end function isLegalCard()
+} //end contract Munchkin {}
