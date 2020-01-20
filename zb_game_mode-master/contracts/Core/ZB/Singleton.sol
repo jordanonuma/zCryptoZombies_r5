@@ -49,7 +49,7 @@ contract Singleton is ZBGameMode  {
 
                 for (uint k = 0; k < cardCount; k++) {
                      if (keccak256(abi.encodePacked(newCards[k].mouldName)) == keccak256(abi.encodePacked(gameState.playerStates[i].cardsInDeck[j].mouldName))){
-                        
+                        cardAlreadyInDeck = true;
                     }
                 } //end for(uint k)
 
