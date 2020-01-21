@@ -2,9 +2,9 @@ pragma solidity 0.4.25;
 
 import "./ZB/ZBGameMode.sol";
 
-//Singleton will only allow unique cards per player's deck (i.e. no duplicates).
+//ZombiePile will put both players' decks into a single bucket where both players will draw from.
 
-contract Singleton is ZBGameMode  {
+contract ZombiePile is ZBGameMode  {
     mapping (string => bool) internal bannedCards; //will map "True" or "False" wrt card is banned or not
 
     constructor() public {
@@ -64,4 +64,4 @@ contract Singleton is ZBGameMode  {
 
     changes.emit();
 
-} //end contract Munchkin {}
+} //end contract ZombiePile {}
