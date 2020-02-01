@@ -20,4 +20,10 @@ contract("CryptoZombies", (accounts) => {
         const result = await contractInstance.createRandomZombie(zombieNames[0], {from: alice});
         await utils.shouldThrow(contractInstance.createRandomZombie(zombieNames[1], {from: alice}));
     }) //end it()
+
+    context("with the single-step transfer scenario", async () => {
+        it("should transfer a zombie", async () => {
+            
+        }) //end it()
+    }) //end context()
 }) //end contract() and end of test
