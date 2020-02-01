@@ -31,5 +31,8 @@ contract("CryptoZombies", (accounts) => {
         it("should approve and then transfer a zombie when the approved address calls transferFrom()", async () => {
             
         }) //end it()
+        it("should approve and then transfer a zombie when the owner calls transferFrom()", async () => {
+            
+        }) //end it()
     }) //end context()
 }) //end contract() and end of test
