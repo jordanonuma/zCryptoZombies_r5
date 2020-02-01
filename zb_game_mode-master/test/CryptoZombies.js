@@ -26,4 +26,10 @@ contract("CryptoZombies", (accounts) => {
             
         }) //end it()
     }) //end context()
+
+    context("with the two-step transfer scenario", async () => {
+        it("should approve and then transfer a zombie when the approved address calls _transferFrom()", async () => {
+            
+        }) //end it()
+    }) //end context()
 }) //end contract() and end of test
