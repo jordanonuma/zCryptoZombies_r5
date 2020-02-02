@@ -26,7 +26,7 @@ contract("CryptoZombies", (accounts) => {
             const result = await contractInstance.createRandomZombie(zombieNames[0], {from: alice}); //tests creating a new ERC721 for alice.
             const zombieId = result.logs[0].args.zombieId.toNumber();
             await contractInstance.transferFrom(alice, bob, zombieId, {from: alice});
-            const newOwner = ownerOf(zombieId);
+            const newOwner = await contractInstance.ownerOf(zombieId);
             assert.equal(newOwner, bob);
         }) //end it()
     }) //end context()
