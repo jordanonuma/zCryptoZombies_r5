@@ -23,7 +23,7 @@ contract("CryptoZombies", (accounts) => {
 
     xcontext("with the single-step transfer scenario", async () => {
         it("should transfer a zombie", async () => {
-            
+            await contractInstance.createRandomZombie(zombieNames[0], {from: alice}); //tests creating a new ERC721 for alice.
         }) //end it()
     }) //end context()
 
