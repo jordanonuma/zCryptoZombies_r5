@@ -24,7 +24,7 @@ contract("CryptoZombies", (accounts) => {
     xcontext("with the single-step transfer scenario", async () => {
         it("should transfer a zombie", async () => {
             const result = await contractInstance.createRandomZombie(zombieNames[0], {from: alice}); //tests creating a new ERC721 for alice.
-            const zombieId = new constractInstance zombieNames[0];
+            const zombieId = result.logs[0].args.zombieId.toNumber();
             await contractInstance.transferFrom(zombieId, {from: alice, bob});
             const newOwner = ownerOf(zombieId);
             assert.equal(newOwner, bob);
