@@ -31,7 +31,7 @@ contract("CryptoZombies", (accounts) => {
         }) //end it()
     }) //end context()
 
-    xcontext("with the two-step transfer scenario", async () => {
+    context("with the two-step transfer scenario", async () => {
         it("should approve and then transfer a zombie when the approved address calls transferFrom()", async () => {
             const result = await contractInstance.createRandomZombie(zombieNames[0], {from: alice});
             const zombieId = result.logs[0].args.zombieId.toNumber();
