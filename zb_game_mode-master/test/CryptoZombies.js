@@ -40,7 +40,7 @@ contract("CryptoZombies", (accounts) => {
             const newOwner = await contract.Instance.ownerOf(zombieId);
             assert.equal(newOwner, bob);
         }) //end it()
-        it("should approve and then transfer a zombie when the owner calls transferFrom()", async () => {
+        xit("should approve and then transfer a zombie when the owner calls transferFrom()", async () => {
             
         }) //end it()
     }) //end context()
