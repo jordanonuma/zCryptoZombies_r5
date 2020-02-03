@@ -37,7 +37,7 @@ contract("CryptoZombies", (accounts) => {
             const zombieId = result.logs[0].args.zombieId.toNumber();
             await contractInstance.approve(bob, zombieId, {from: alice});
             await contractInstance.transferFrom(alice, bob, zombieId, {from: bob});
-            const newOwner = await contract.Instacle.ownerOf(zombieId);
+            const newOwner = await contract.Instance.ownerOf(zombieId);
         }) //end it()
         it("should approve and then transfer a zombie when the owner calls transferFrom()", async () => {
             
