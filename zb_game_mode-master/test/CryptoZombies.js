@@ -45,6 +45,7 @@ contract("CryptoZombies", (accounts) => {
             const zombieId = result.logs[0].args.zombieId.toNumber();
             await contractInstance.approve(bob, zombieId, {from: alice});
             await contractInstance.transferFrom(alice, bob, zombieId, {from: alice});
+            assert.equal(newOwner, bob);
         }) //end it()
     }) //end context()
 }) //end contract() and end of test
