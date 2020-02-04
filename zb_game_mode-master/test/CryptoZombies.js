@@ -41,7 +41,7 @@ contract("CryptoZombies", (accounts) => {
             assert.equal(newOwner, bob);
         }) //end it()
         xit("should approve and then transfer a zombie when the owner calls transferFrom()", async () => {
-            
+            await contractInstance.transferFrom(alice, bob, zombieId, {from: alice});
         }) //end it()
     }) //end context()
 }) //end contract() and end of test
