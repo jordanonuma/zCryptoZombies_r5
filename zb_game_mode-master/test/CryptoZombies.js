@@ -61,6 +61,6 @@ contract("CryptoZombies", (accounts) => {
         const secondZombieId = result.logs[0].args.zombieId.toNumber();
         await time.increase(time.duration.days(1));
         await contractInstance.attack(firstZombieId, secondZombieId, {from: alice});
-        assert.equal(result.receipt.status, true);
+        expect(result.receipt.status).to.equal(true);
     }) //end it()
 }) //end contract() and end of test
