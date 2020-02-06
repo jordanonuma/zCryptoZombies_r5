@@ -39,7 +39,7 @@ contract("CryptoZombies", (accounts) => {
             await contractInstance.approve(bob, zombieId, {from: alice});
             await contractInstance.transferFrom(alice, bob, zombieId, {from: bob});
             const newOwner = await contract.Instance.ownerOf(zombieId);
-            assert.equal(newOwner, bob);
+            expect(newOwner).to.equal(bob);
         }) //end it()
         it("should approve and then transfer a zombie when the owner calls transferFrom()", async () => {
             const result = await contractInstance.createRandomZombie(zombieNames[0], {from: alice});
@@ -49,7 +49,7 @@ contract("CryptoZombies", (accounts) => {
             await contractInstance.approve(bob, zombieId, {from: alice});
             await contractInstance.transferFrom(alice, bob, zombieId, {from: alice});
             const newOwner = await contractInstance.ownerOf(zombieId);
-            assert.equal(newOwner, bob);
+            expect(newOwner).to.equal(bob);
         }) //end it()
     }) //end context()
 }) //end contract() and end of test
