@@ -1,3 +1,4 @@
+var expect = require('chai').expect; //imports the 'expect' style from the Chai assertion library
 const CryptoZombies = artifacts.require("CryptoZombies");
 const utils = require("./helpers/utils");
 const zombieNames = ["Zombie 1", "Zombie 2"];
